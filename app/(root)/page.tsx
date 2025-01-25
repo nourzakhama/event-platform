@@ -7,11 +7,9 @@ import Link from "next/link";
 import Search from "@/components/ui/shared/search";
 import { SearchParamProps } from "@/types";
 import CategoryFilter from "@/components/ui/shared/CategoryFilter";
+import { get } from "http";
 
-export const fetchEvents = async () => {
-  // Example fetch logic: You can replace this with your actual implementation
 
-};
 
 const Home=async({ searchParams }: SearchParamProps)=>{
   const page = Number(searchParams?.page) || 1;
@@ -75,7 +73,7 @@ const Home=async({ searchParams }: SearchParamProps)=>{
           totalPages={events?.totalPages || 0}
           admin={false}
           member={false}
-          fetchEvents={fetchEvents}
+          fetchEvents={()=>{}}
         />
       </section>
     </>

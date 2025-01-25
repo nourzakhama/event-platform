@@ -1,5 +1,5 @@
 
-import { fetchEvents } from "@/app/(root)/page";
+
 import { Event } from "@/types";
 import axios from "axios";
 export const changeEmployeStatus= async (event:any) => {
@@ -207,4 +207,8 @@ export const getEventsByCreator = async (creId: string | undefined, page: number
     console.error("Error while getting events by user:", error);
     return []; // Return an empty array in case of an error
   }
+};
+export const fetchEvents = async () => {
+  // Example fetch logic: You can replace this with your actual implementation
+
 };
