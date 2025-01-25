@@ -10,7 +10,7 @@ import CategoryFilter from "@/components/ui/shared/CategoryFilter";
 
 export const fetchEvents = async () => {
   // Example fetch logic: You can replace this with your actual implementation
-  return [];
+
 };
 
 const Home=async({ searchParams }: SearchParamProps)=>{
