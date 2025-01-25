@@ -13,7 +13,7 @@ export const fetchEvents = async () => {
   return [];
 };
 
-export default async function Home({ searchParams }: SearchParamProps) {
+const Home=async({ searchParams }: SearchParamProps)=>{
   const page = Number(searchParams?.page) || 1;
   const searchText = (searchParams?.query as string) || "";
   const category = (searchParams?.category as string) || "";
@@ -81,3 +81,4 @@ export default async function Home({ searchParams }: SearchParamProps) {
     </>
   );
 }
+export default Home;
