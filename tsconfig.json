@@ -4,7 +4,7 @@
       "dom",
       "dom.iterable",
       "esnext",
-      "es2015"   // Add "es2015" to enable ES6 features
+      "es2015" // Added "es2015" for ES6 features
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,6 +17,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "downlevelIteration": true, // Enabled to support iteration over Set and Map
     "plugins": [
       {
         "name": "next"
@@ -26,8 +27,7 @@
       "@/*": [
         "./*"
       ]
-    },
-    "downlevelIteration": true,  // Enable downlevelIteration to support iteration over Set and Map
+    }
   },
   "include": [
     "next-env.d.ts",

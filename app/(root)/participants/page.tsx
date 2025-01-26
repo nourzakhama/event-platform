@@ -64,8 +64,11 @@ const Page = () => {
           <tr>
             <th>id</th>
             <th>cin</th>
-            <th>name</th>
             <th>email</th>
+            <th>userName</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>photo profil</th>
             <th>satisfaction</th>
             <th>Actions</th>
           </tr>
@@ -161,7 +164,7 @@ const Page = () => {
               name="imageUrl"
               className="form-control"
               placeholder="foto de profil"
-              value={form.satisfaction}
+              value={form.imageUrl}
               onChange={handleChange}
             />
           </div>
