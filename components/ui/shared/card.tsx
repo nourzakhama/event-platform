@@ -4,7 +4,7 @@ import { formatDateTime } from '@/lib/utils'
 import Image from "next/image";
 import { Check, Divide } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import  CheckOutButton  from "@/components/ui/shared/CheckOutButton";
+
 import {DeleteConfirmation} from "@/components/deleteConfirmation";
 type props={
     event:Event,
