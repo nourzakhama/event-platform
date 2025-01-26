@@ -7,7 +7,7 @@ import { set } from 'zod';
 
 const Page = () => {
   const [data, setData] = useState<Participant[]>([]);
-  const [form, setForm] = useState({ cin: '', name: '', email: '' ,satisfaction:''});
+  const [form, setForm] = useState({ cin: '', email: '',name:'', firstName: '' ,lastName:'',imageUrl:'',satisfaction:''});
   const [isEditing, setIsEditing] = useState(false);
   const[currentId,setCurrentId]=useState<string>('');
 
@@ -27,7 +27,7 @@ const Page = () => {
 
   const handleAdd =async () => {
    await addParticipant(form);
-    setForm({ cin: '', name: '', email: '' ,satisfaction:''});
+    setForm({ cin: '', email: '',name:'', firstName: '' ,lastName:'',imageUrl:'',satisfaction:''});
     fetchParticipants();
   };
 
@@ -39,7 +39,7 @@ const Page = () => {
 
   const handleUpdate = async() => {
     await updateParticipant(currentId,form);
-    setForm({ cin: '', name: '', email: '',satisfaction:'' });
+    setForm({ cin: '', email: '',name:'', firstName: '' ,lastName:'',imageUrl:'',satisfaction:''});
     setIsEditing(false);
     fetchParticipants();
   };
@@ -73,10 +73,14 @@ const Page = () => {
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
+                 
               <th scope="row">{item.id}</th>
               <td>{item.cin}</td>
-              <td>{item.name}</td>
               <td>{item.email}</td>
+              <td>{item.name}</td>
+              <td>{item.firstName}</td>
+              <td>{item.lastName}</td>
+              <td>{item.imageUrl}</td>
               <td>{item.satisfaction}</td>
               <td>
                 <button
@@ -114,6 +118,16 @@ const Page = () => {
           <div className="col-md-3">
             <input
               type="text"
+              name="email"
+              className="form-control"
+              placeholder="email"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-md-3">
+            <input
+              type="text"
               name="name"
               className="form-control"
               placeholder="name"
@@ -124,13 +138,35 @@ const Page = () => {
           <div className="col-md-3">
             <input
               type="text"
-              name="email"
+              name="firstName"
               className="form-control"
-              placeholder="email"
-              value={form.email}
+              placeholder="firstName"
+              value={form.firstName}
+              onChange={handleChange}
+            />
+                   </div>
+            <div className="col-md-3">
+            <input
+              type="text"
+              name="lastName"
+              className="form-control"
+              placeholder="lastName"
+              value={form.lastName}
               onChange={handleChange}
             />
           </div>
+          <div className="col-md-3">
+            <input
+              type="text"
+              name="imageUrl"
+              className="form-control"
+              placeholder="foto de profil"
+              value={form.satisfaction}
+              onChange={handleChange}
+            />
+          </div>
+   
+      
           <div className="col-md-3">
             <input
               type="text"
